@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('book_categories', function (Blueprint $table) {
+        Schema::create('book_tag_assignments', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->text('status')->default('active');
+            $table->text('book_id');
+            $table->text('tag_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('book_categories');
+        Schema::dropIfExists('book_tag_assignments');
     }
 };
